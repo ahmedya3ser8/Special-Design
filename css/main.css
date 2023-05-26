@@ -49,6 +49,85 @@ body {
   }
 }
 
+.settings-box {
+  position: fixed;
+  background-color: #fff;
+  width: 200px;
+  min-height: 100vh;
+  left: -200px;
+  top: 0;
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.settings-box.open {
+  left: 0;
+}
+
+.settings-box .toggle-settings {
+  position: absolute;
+  right: -30px;
+  top: 100px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.settings-box .toggle-settings i {
+  padding: 5px 0;
+  width: 30px;
+}
+
+.settings-box .option-box {
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+}
+
+.settings-box .option-box h4 {
+  color: #777;
+  font-size: 16px;
+}
+
+.settings-box .option-box .colors-list {
+  list-style: none;
+  margin: 10px 0 0;
+}
+
+.settings-box .option-box .colors-list li {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.settings-box .option-box .colors-list li.active {
+  opacity: 1;
+}
+
+.settings-box .option-box .colors-list li:first-child {
+  background-color: #FF9800;
+}
+
+.settings-box .option-box .colors-list li:nth-child(2) {
+  background-color: #E91E63;
+}
+
+.settings-box .option-box .colors-list li:nth-child(3) {
+  background-color: #009688;
+}
+
+.settings-box .option-box .colors-list li:nth-child(4) {
+  background-color: #03A9F4;
+}
+
+.settings-box .option-box .colors-list li:nth-child(5) {
+  background-color: #4CAF50;
+}
+
 .landing-page {
   background-image: url(../imgs/01.jpg);
   background-size: cover;
