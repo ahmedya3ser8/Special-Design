@@ -79,14 +79,15 @@ body {
 }
 
 .settings-box .option-box {
-  padding: 20px;
+  padding: 10px;
+  background-color: #eee;
   text-align: center;
   margin: 10px;
 }
 
 .settings-box .option-box h4 {
   color: #777;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .settings-box .option-box .colors-list {
@@ -101,11 +102,11 @@ body {
   background-color: #333;
   border-radius: 50%;
   cursor: pointer;
-  opacity: 0.5;
+  border: 3px solid #eee;
 }
 
 .settings-box .option-box .colors-list li.active {
-  opacity: 1;
+  border-color: #fff;
 }
 
 .settings-box .option-box .colors-list li:first-child {
@@ -126,6 +127,25 @@ body {
 
 .settings-box .option-box .colors-list li:nth-child(5) {
   background-color: #4CAF50;
+}
+
+.settings-box .random-backgrounds .yes,
+.settings-box .random-backgrounds .no {
+  width: 50px;
+  display: inline-block;
+  background-color: #009688;
+  color: #fff;
+  padding: 4px 10px;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 6px;
+  opacity: .5;
+  cursor: pointer;
+}
+
+.settings-box .random-backgrounds span.active {
+  opacity: 1;
 }
 
 .landing-page {
