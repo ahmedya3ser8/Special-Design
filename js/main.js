@@ -81,3 +81,16 @@ function randomizeImgs() {
 }
 
 randomizeImgs();
+
+// Animate Skills Width
+
+let ourSkills = document.querySelector(".our-skills");
+let spansProg = document.querySelectorAll(".our-skills .skill-progress span");
+
+window.onscroll = function() {
+  if (window.scrollY >= ourSkills.offsetTop - 150) {
+    spansProg.forEach(span => {
+      span.style.width = span.dataset.progress;
+    })
+  }
+}
