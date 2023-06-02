@@ -136,3 +136,21 @@ document.addEventListener("click", (e) => {
     document.querySelector(".popup-overlay").remove();
   }
 });
+
+// scroll with links and nav Bullets
+const Bullets = document.querySelectorAll(".nav-bullets .bullet");
+const navLinks = document.querySelectorAll(".links a");
+
+function scrollToSections(elements) {
+  elements.forEach(ele => {
+    ele.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(e.target.dataset.section).scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  });
+}
+
+scrollToSections(Bullets);
+scrollToSections(navLinks);

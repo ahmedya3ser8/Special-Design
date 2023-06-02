@@ -138,11 +138,11 @@ body {
   background-color: #4CAF50;
 }
 
-.settings-box .random-backgrounds .yes,
-.settings-box .random-backgrounds .no {
+.settings-box .option-box .yes,
+.settings-box .option-box .no {
   width: 50px;
   display: inline-block;
-  background-color: #009688;
+  background-color: var(--main-color);
   color: #fff;
   padding: 4px 10px;
   margin-top: 10px;
@@ -153,8 +153,58 @@ body {
   cursor: pointer;
 }
 
-.settings-box .random-backgrounds span.active {
+.settings-box .option-box span.active {
   opacity: 1;
+}
+
+.nav-bullets {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  z-index: 1000;
+}
+
+.nav-bullets .bullet {
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--main-color);
+  margin: 20px auto;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-bullets .bullet .tooltip {
+  background-color: var(--main-color);
+  width: 120px;
+  color: #fff;
+  padding: 8px 10px;
+  position: absolute;
+  right: 32px;
+  top: -10px;
+  text-align: center;
+  cursor: default;
+  pointer-events: none;
+  display: none;
+}
+
+.nav-bullets .bullet .tooltip::before {
+  content: '';
+  border: 10px solid;
+  border-color: transparent transparent transparent var(--main-color);
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: -19px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-bullets .bullet:hover .tooltip {
+  display: block;
 }
 
 .landing-page {
@@ -619,4 +669,113 @@ body {
 
 .testimonials .ts-box .info-box .info-text p {
   color: #6b6969;
+}
+
+.contact {
+  background-image: url('../imgs/contact.png');
+  background-size: cover;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.contact .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.contact .container {
+  position: relative;
+  z-index: 2;
+}
+
+.contact form {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.contact form .contact-box {
+  flex: 1;
+}
+
+.contact form .contact-box input {
+  height: 40px;
+}
+
+.contact form .contact-box textarea {
+  height: 135px;
+  resize: none;
+}
+
+.contact form .contact-box input,
+.contact form .contact-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  background-color: rgba(218, 218, 218, 0.19);
+}
+
+.contact form .contact-box input:not([type ="submit"]):focus,
+.contact form .contact-box textarea:focus {
+  outline: 1px solid var(--main-color);
+}
+
+.contact form .submit {
+  border-color: transparent !important;
+  background-color: var(--main-color) !important;
+  color: #fff;
+  cursor: pointer;
+}
+
+.contact form input:focus::placeholder,
+.contact form textarea:focus::placeholder {
+  opacity: 0;
+  transition: var(--main-transation);
+}
+
+.footer {
+  background-color: #333;
+  padding: 15px;
+  color: #fff;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer p span {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.footer .social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  padding: 15px;
+  margin-right: 10px;
+  border-radius: 50%;
+  transition: var(--main-transation);
+  text-decoration: none;
+}
+
+.footer .social-icons a:hover {
+  background-color: var(--main-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 10px var(--main-color);
 }
