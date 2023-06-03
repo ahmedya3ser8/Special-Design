@@ -41,20 +41,14 @@ colorsLi.forEach(li => {
   li.addEventListener("click", (e) => {
     document.documentElement.style.setProperty("--main-color", e.target.dataset.color);
     localStorage.setItem("color_option", e.target.dataset.color);
-    e.target.parentElement.querySelectorAll(".active").forEach(element => {
-      element.classList.remove("active");
-    });
-    e.target.classList.add("active");
+    handleActive(e);
   });
 });
 
 const randomBackground = document.querySelectorAll(".random-backgrounds span");
 randomBackground.forEach(span => {
   span.addEventListener("click", (e) => {
-    e.target.parentElement.querySelectorAll(".active").forEach(element => {
-      element.classList.remove("active");
-    });
-    e.target.classList.add("active");
+    handleActive(e);
     if (e.target.dataset.background === "yes") {
       backgroundOption = true;
       randomizeImgs();
@@ -154,3 +148,28 @@ function scrollToSections(elements) {
 
 scrollToSections(Bullets);
 scrollToSections(navLinks);
+
+// Remove Active Class From all And put it on Current link
+function handleActive(event) {
+  event.target.parentElement.querySelectorAll(".active").forEach(element => {
+    element.classList.remove("active");
+  });
+  event.target.classList.add("active");
+}
+
+// Toggle Menu 
+let toggleBtn = document.querySelector(".toggle-menu");
+let Links = document.querySelector(".links");
+
+toggleBtn.onclick = function () {
+  Links.classList.toggle("open");
+};
+
+// Click Anywhere Outside Menu And Toggle Button
+document.addEventListener("click", (e) => {
+  if (e.target !== toggleBtn && e.target !== Links) {
+    if (Links.classList.contains("open")) {
+      Links.classList.toggle("open");
+    }
+  }
+});
