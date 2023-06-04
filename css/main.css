@@ -166,6 +166,19 @@ body {
   opacity: 1;
 }
 
+.settings-box .reset-option {
+  background-color: #F44336;
+  border: none;
+  width: 180px;
+  margin: 10px auto;
+  display: block;
+  color: #FFF;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .nav-bullets {
   position: fixed;
   right: 0;
